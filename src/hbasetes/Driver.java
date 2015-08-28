@@ -79,19 +79,15 @@ public class Driver {
 	public static void main(String[] args) throws MalformedURLException, IOException {
 		// TODO Auto-generated method stub
 		String url = "http://freemusicarchive.org/api/get/albums.json?api_key=60BLHNQCAOUFPIBZ&limit=5";
-//        String json = IOUtils.toString(new URL(url));
-      String json = readFile("C://Users//byan//Documents//BigData//twitter.json");
-        String jsonTwitter = new String();
-        System.out.println(json);
-        // use the isxxx methods to find out the type of jsonelement. In our
-        // example we know that the root object is the Albums object and
-        // contains an array of dataset objects
+//        	String json = IOUtils.toString(new URL(url));
+        	String json = readFile("C://Users//byan//Documents//BigData//twitter.json");
+        	String jsonTwitter = new String();
+        	System.out.println(json);
         
+        	JSONObject jsonOb = new JSONObject(json);
         
-        JSONObject jsonOb = new JSONObject(json);
-        
-        Map<String,String> out = new HashMap<String,String>();
-        System.out.println(parseRecur("tweet","tweet",jsonOb, out,-1));
+        	Map<String,String> out = new HashMap<String,String>();
+        		System.out.println(parseRecur("tweet","tweet",jsonOb, out,-1));
 	}
 
 }
